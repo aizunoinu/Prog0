@@ -3,7 +3,7 @@
 #借金
 loan = 200000
 #経過月数カウント
-count = 1
+count = 0
 #返済額
 total = 0
 
@@ -15,6 +15,10 @@ puts "#{loan}円を定額リボ払いで月#{money}円ずつ返済します。"
 
 #借金が０円以下になったら処理を終了する。
 while loan > 0
+
+    #経過月数のカウント
+    count = count + 1
+
     #ローンの計算
     loan = (loan + loan * 0.15 / 12 ).to_i
 
@@ -29,7 +33,6 @@ while loan > 0
     printf("%2d ヶ月：  金利手数料込残金：%6d円  支払後残金：%6d円  返済総額%6d円\n", count, loan, loan - money, total)
 
     loan = loan - money
-    count = count + 1
 end
 
 puts "返済期間  #{count}ヶ月、  総返済額：#{total}円"
