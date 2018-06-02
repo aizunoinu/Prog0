@@ -1,7 +1,7 @@
 #クレジットカードのリボ払い返済
 
 #借金
-loan = 200000
+loan = 3840000
 #経過月数カウント
 count = 0
 #返済額
@@ -20,7 +20,7 @@ while loan > 0
     count = count + 1
 
     #ローンの計算
-    loan = (loan + loan * 0.15 / 12 ).to_i
+    loan = (loan + loan * 0.0016 / 12 ).to_i
 
     #返済額の計算
     if loan > money then
